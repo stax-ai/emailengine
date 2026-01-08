@@ -1,0 +1,50 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Go build artifacts
+bin/
+build/
+dist/
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+.bin/
+coverage.out
+coverage/
+*.coverprofile
+
+# Go workspace
+go.work
+go.work.sum
+
+# Local tooling caches
+.bin/
+.gopath/
+.gocache/
+.pkg/
+
+# Env files
+.env
+.env.*
+
+# Editors/IDE
+.vscode/
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# Generated temporary specs
+swagger.fixed.json
+openapi.fixed.yml
+
+# Docker local
+.docker/
+docker-compose.override.yml
+
+
