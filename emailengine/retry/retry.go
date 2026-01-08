@@ -3,7 +3,7 @@ package retry
 import (
 	"errors"
 	"math"
-	"math/rand/v2"
+	"math/rand"
 	"net"
 	"net/http"
 	"time"
@@ -37,10 +37,7 @@ func ShouldRetry(res *http.Response, err error) bool {
 		}
 		// Dial errors etc.
 		var opErr *net.OpError
-		if errors.As(err, &opErr) {
-			return true
-		}
-		return false
+		return errors.As(err, &opErr)
 	}
 	if res == nil {
 		return true

@@ -1,6 +1,6 @@
 module github.com/stax-ai/emailengine
 
-go 1.24.2
+go 1.24
 
 require (
 	go.opentelemetry.io/otel v1.28.0

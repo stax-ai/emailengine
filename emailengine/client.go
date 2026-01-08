@@ -64,7 +64,7 @@ func New(opts ...Option) (*Client, error) {
 	// Configure generated client
 	conf := api.NewConfiguration()
 	conf.Servers = api.ServerConfigurations{
-		{URL: cfg.BaseURL},
+		api.ServerConfiguration{URL: cfg.BaseURL},
 	}
 	conf.HTTPClient = cfg.HTTPClient
 	// auth via bearer

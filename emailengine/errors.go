@@ -24,9 +24,8 @@ func decodeError(op string, res *http.Response) error {
 	if res == nil {
 		return &EEError{Status: 0, Message: "no response", Operation: op, Retryable: true}
 	}
-	defer io.Copy(io.Discard, res.Body)
-	defer res.Body.Close()
 	body, _ := io.ReadAll(res.Body)
+	_ = res.Body.Close()
 	// Try to parse common error shape
 	var kv map[string]any
 	var code, msg string
